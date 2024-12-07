@@ -9,6 +9,16 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        Bluetooth {
+            bindings = <&mo 4>;
+            key-positions = <37 40 23>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +31,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB       &kp Q        &kp W           &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O            &kp P                   &kp BSPC
-&lt 3 ESCAPE  &mt LCTRL A  &mt LEFT_ALT S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &mt RIGHT_ALT L  &mt RIGHT_CONTROL SEMI  &kp SQT
-&kp LSHFT     &kp Z        &kp X           &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT          &kp FSLH                &kp RIGHT_SHIFT
-                                           &kp LGUI  &to 1  &kp SPACE    &kp RET  &sl 2  &kp RMETA
+&kp TAB     &kp Q        &kp W           &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O            &kp P                   &kp BSPC
+&kp ESCAPE  &mt LCTRL A  &mt LEFT_ALT S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &mt RIGHT_ALT L  &mt RIGHT_CONTROL SEMI  &kp SQT
+&kp LSHFT   &kp Z        &kp X           &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT          &kp FSLH                &kp RIGHT_SHIFT
+                                         &kp LGUI  &sl 1  &kp SPACE    &kp RET  &sl 2  &kp RMETA
             >;
         };
 
@@ -37,10 +47,10 @@
 
             display-name = "Number";
             bindings = <
-&trans   &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6        &kp N7        &kp N8        &kp N9        &kp N0           &kp BSPC
-&kp F11  &kp F1  &kp F2  &kp F3    &kp F4  &kp F5       &kp KP_PLUS   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MULTIPLY  &trans
-&kp F12  &kp F6  &kp F7  &kp F8    &kp F9  &kp F10      &kp KP_MINUS  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_DIVIDE    &trans
-                         &kp LGUI  &to 0   &kp SPACE    &kp RET       &sl 2         &kp NUMBER_0
+&trans              &kp N1               &kp N2           &kp N3    &kp N4  &kp N5       &kp N6        &kp N7        &kp N8             &kp N9                  &kp N0                         &kp BSPC
+&kp F11             &mt LEFT_CONTROL F1  &mt LEFT_ALT F2  &kp F3    &kp F4  &kp F5       &kp KP_PLUS   &kp NUMBER_4  &kp NUMBER_5       &mt RIGHT_ALT NUMBER_6  &mt RIGHT_CONTROL KP_MULTIPLY  &none
+&mt LEFT_SHIFT F12  &kp F6               &kp F7           &kp F8    &kp F9  &kp F10      &kp KP_MINUS  &kp NUMBER_1  &kp NUMBER_2       &kp NUMBER_3            &kp KP_DIVIDE                  &kp RIGHT_SHIFT
+                                                          &kp LGUI  &to 0   &kp SPACE    &kp RET       &to 2         &mt RGUI NUMBER_0
             >;
         };
 
@@ -56,27 +66,27 @@
 &kp GRAVE        &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR  &kp RPAR  &kp BSPC
 &none            &none     &none   &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT      &kp RBKT  &kp BSLH  &kp APOS
 &kp RIGHT_SHIFT  &none     &none   &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC      &kp RBRC  &kp PIPE  &kp TILDE
-                                   &kp LGUI  &to 0     &kp SPACE    &kp RET    &to 3      &kp RALT
+                                   &kp LGUI  &to 1     &kp SPACE    &kp RET    &to 3      &kp RALT
             >;
         };
 
         navigation {
             display-name = "Navigation";
             bindings = <
-&none  &none  &none  &none  &none  &none    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none  &none
-&none  &none  &none  &none  &none  &none    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none  &none
-&none  &none  &none  &none  &none  &none    &none     &none      &none      &none      &none  &none
-                     &none  &to 0  &none    &none     &to 4      &none
+&none  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp K_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none  &none
+&none  &none                 &none                 &none       &none         &none              &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none  &none
+&none  &none                 &none                 &none       &none         &none              &none     &none      &none      &none      &none  &none
+                                                   &none       &to 0         &none              &none     &to 0      &none
             >;
         };
 
         connections {
             display-name = "Connections";
             bindings = <
-&none       &kp C_BRI_DN  &kp C_BRI_UP  &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &none  &none  &none  &none  &none  &kp C_AL_LOCK
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
-&none       &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &kp C_SLEEP
-                                        &none         &to 0         &none           &none  &to 0  &none
+&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+                                        &none         &none         &none           &none  &none  &none
             >;
         };
     };
