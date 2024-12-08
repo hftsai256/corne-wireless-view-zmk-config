@@ -78,7 +78,7 @@
 
             display-name = "Symbol";
             bindings = <
-&kp GRAVE        &kp EXCL          &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR            &kp RPAR                &kp BSPC
+&kp GRAVE        &kp EXCL          &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTERISK  &kp LPAR            &kp RPAR                &kp DELETE
 &kp TILDE        &kp LEFT_CONTROL  &kp LEFT_ALT  &none     &none     &none        &kp MINUS  &kp EQUAL  &kp LBKT      &mt RIGHT_ALT RBKT  &mt RIGHT_CONTROL BSLH  &kp DOUBLE_QUOTES
 &kp RIGHT_SHIFT  &none             &none         &none     &none     &none        &kp UNDER  &kp PLUS   &kp LBRC      &kp RBRC            &kp PIPE                &kp RIGHT_SHIFT
                                                  &kp LGUI  &to 1     &kp SPACE    &kp RET    &to 3      &kp RGUI
